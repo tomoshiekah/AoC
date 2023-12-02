@@ -7,7 +7,7 @@ AMOUNT = {
 def part1():
     gameNumbers = []
 
-    with open('day2.txt') as f:
+    with open('AoC2023/day2.txt') as f:
         for line in f:
             game, input = line.strip().split(":")
             if isPossible(input):
@@ -29,7 +29,7 @@ def isPossible(input):
 def part2():
     gameNumbers = []
 
-    with open('day2.txt') as f:
+    with open('AoC2023/day2.txt') as f:
         for line in f:
             game, input = line.strip().split(":")
             minAmounts = getMinAmounts(input)
@@ -58,5 +58,5 @@ def getMinAmounts(input):
     
     return minAmounts
 
-
+print(part1())
 print(part2())

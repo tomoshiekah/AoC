@@ -10,18 +10,21 @@ NUMBERS = {
     "nine" : 9
 }
 
-def main():
+def main(w):
     cValues = []
 
-    with open('day1.txt') as f:
+    with open('AoC2023/day1.txt') as f:
         for line in f:
-            cValues.append(getCalibrationValue(line.strip()))
+            cValues.append(getCalibrationValue(w, line.strip()))
     return sum(cValues)
 
-def getCalibrationValue(input):
-
-    first = findNumberW(input, True)
-    last = findNumberW(input[::-1], False)
+def getCalibrationValue(w, input):
+    if w:
+        first = findNumberW(input, True)
+        last = findNumberW(input[::-1], False)
+    else:
+        first = findNumber(input)
+        last = findNumber(input[::-1])
 
     return int(str(first) + str(last))
 
@@ -51,4 +54,5 @@ def checkIfNumber(input, index, first):
             return NUMBERS[written]
         
 
-print(main())
+print(main(False))
+print(main(True))
