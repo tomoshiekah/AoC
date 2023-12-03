@@ -13,7 +13,7 @@ NUMBERS = {
 def main(w):
     cValues = []
 
-    with open('AoC2023/day1.txt') as f:
+    with open('AoC2023/day01.txt') as f:
         for line in f:
             cValues.append(getCalibrationValue(w, line.strip()))
     return sum(cValues)
