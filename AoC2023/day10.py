@@ -19,7 +19,6 @@ def readInput():
     return start
 
 def startLoop(s):
-    print(str(s[0]+1), str(s[1]), pipes[s[0]+1][s[1]], NEXTDIR['down'].keys())
     if len(pipes) > s[0]+1 and pipes[s[0]+1][s[1]] in NEXTDIR['down'].keys():
         next = [s[0]+1, s[1]]
         dir = 'down'
@@ -77,3 +76,8 @@ def getNextLoopIterative(dir, pos):
 
 
 print(part1())
+
+#TODO for part2:
+    # save all parts of main loop
+    # make all other parts '.'s
+    # after that later
